@@ -10,7 +10,6 @@ export const SORT_OPTIONS = [
 ];
 
 const comparators = {
-  recommended: (a, b) => tutorScore(b) - tutorScore(a),
   'price-asc': (a, b) => a.pricePerHour - b.pricePerHour,
   'price-desc': (a, b) => b.pricePerHour - a.pricePerHour,
   experience: (a, b) => b.experienceYears - a.experienceYears,
@@ -32,7 +31,13 @@ export function applyFilters(list, filters) {
   });
 }
 
+function sortByScore(list) {
+  const scores = new Map(list.map((tutor) => [tutor.id, tutorScore(tutor)]));
+  return list.sort((a, b) => scores.get(b.id) - scores.get(a.id));
+}
+
 export function getVisibleTutors(list, { query, filters, sortBy }) {
   const result = applyFilters(list, filters).filter((tutor) => matchesQuery(tutor, query));
-  return result.sort(comparators[sortBy] || comparators.recommended);
+  const compare = comparators[sortBy];
+  return compare ? result.sort(compare) : sortByScore(result);
 }
