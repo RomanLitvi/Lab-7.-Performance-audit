@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "label": "live-slow",
+    "date": "2026-11-13T09:24:33.033Z",
+    "conditions": {
+      "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 2
+      },
+      "cpuSlowdown": 4,
+      "network": {
+        "name": "Fast 4G (custom)",
+        "downMbps": 9,
+        "upMbps": 1.5,
+        "rttMs": 60
+      }
+    },
+    "version": "Chrome/157.0.8103.39"
+  },
+  "runs": [
+    {
+      "load": {
+        "lcp": 23840,
+        "lcpElement": "IMG hero.png",
+        "cls": 0.5868055555555556,
+        "transferKB": 22484.9794921875,
+        "requests": 41,
+        "loadEvent": 24841.300000071526,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3901.8,
+        "loafCount": 5,
+        "longestFrame": 2944.899999976158,
+        "forcedLayout": 1770.6,
+        "domNodes": 48815
+      }
+    },
+    {
+      "load": {
+        "lcp": 23572,
+        "lcpElement": "IMG hero.png",
+        "cls": 0.5868055555555556,
+        "transferKB": 22485.0400390625,
+        "requests": 41,
+        "loadEvent": 24619.299999952316,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3689.7000000000003,
+        "loafCount": 5,
+        "longestFrame": 2733.899999976158,
+        "forcedLayout": 1614.2,
+        "domNodes": 48815
+      }
+    },
+    {
+      "load": {
+        "lcp": 23572,
+        "lcpElement": "IMG hero.png",
+        "cls": 0.5868055555555556,
+        "transferKB": 22484.9248046875,
+        "requests": 41,
+        "loadEvent": 24627.799999952316,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3635.1000000000004,
+        "loafCount": 5,
+        "longestFrame": 2697.7000000476837,
+        "forcedLayout": 1590.8,
+        "domNodes": 48815
+      }
+    }
+  ],
+  "summary": {
+    "load": {
+      "lcp": 23572,
+      "lcpElement": "IMG hero.png",
+      "cls": 0.5868055555555556,
+      "transferKB": 22484.9794921875,
+      "requests": 41,
+      "loadEvent": 24627.799999952316,
+      "inp": 0,
+      "typicalInteraction": 0,
+      "interactions": 0,
+      "loafBlocking": 3689.7000000000003,
+      "loafCount": 5,
+      "longestFrame": 2733.899999976158,
+      "forcedLayout": 1614.2,
+      "domNodes": 48815
+    }
+  }
+}

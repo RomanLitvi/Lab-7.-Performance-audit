@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "label": "live-fast",
+    "date": "2026-11-13T09:24:52.244Z",
+    "conditions": {
+      "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 2
+      },
+      "cpuSlowdown": 4,
+      "network": {
+        "name": "Fast 4G (custom)",
+        "downMbps": 9,
+        "upMbps": 1.5,
+        "rttMs": 60
+      }
+    },
+    "version": "Chrome/157.0.8103.39"
+  },
+  "runs": [
+    {
+      "load": {
+        "lcp": 2580,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.638671875,
+        "requests": 15,
+        "loadEvent": 3773.5,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 2076.3,
+        "loafCount": 4,
+        "longestFrame": 2015.6000000238419,
+        "forcedLayout": 1228.5,
+        "domNodes": 48815
+      }
+    },
+    {
+      "load": {
+        "lcp": 2844,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6171875,
+        "requests": 15,
+        "loadEvent": 4047.7999999523163,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 2255.4,
+        "loafCount": 5,
+        "longestFrame": 2192.600000023842,
+        "forcedLayout": 1390.8,
+        "domNodes": 48815
+      }
+    },
+    {
+      "load": {
+        "lcp": 2776,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6123046875,
+        "requests": 15,
+        "loadEvent": 4040.3000000715256,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 2192.5,
+        "loafCount": 4,
+        "longestFrame": 2132.1999999284744,
+        "forcedLayout": 1306,
+        "domNodes": 48815
+      }
+    }
+  ],
+  "summary": {
+    "load": {
+      "lcp": 2776,
+      "lcpElement": "IMG hero-2400.webp",
+      "cls": 0,
+      "transferKB": 102.6171875,
+      "requests": 15,
+      "loadEvent": 4040.3000000715256,
+      "inp": 0,
+      "typicalInteraction": 0,
+      "interactions": 0,
+      "loafBlocking": 2192.5,
+      "loafCount": 4,
+      "longestFrame": 2132.1999999284744,
+      "forcedLayout": 1306,
+      "domNodes": 48815
+    }
+  }
+}

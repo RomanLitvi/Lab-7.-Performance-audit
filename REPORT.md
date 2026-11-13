@@ -18,6 +18,10 @@
 Функціональність не змінилась: пошук, фільтри, сортування, обрані й картка працюють як раніше.
 `npm test` проходить: 4 тести, з них 3 нові regression-тести.
 
+Обидві версії розгорнуті на S3 + CloudFront (див. [«Живий деплой»](#живий-деплой)):
+- швидка (`HEAD`): https://lab7.naukma.com
+- повільна (початковий код, `ec127d3`): https://slow.lab7.naukma.com
+
 ## Умови вимірювання
 
 | Параметр | Значення |
@@ -245,6 +249,30 @@ LCP-елемент — `hero.png`. DOM налічує 48 815 вузлів.
 
 **Що лишилось.** Перший рендер 2000 карток (48 815 DOM-вузлів) — один кадр ~1.7–1.9 с під CPU 4×. Наступний крок тут віртуалізація списку або поступовий рендер. Це змінює поведінку прокрутки й пошуку по сторінці (Ctrl+F), тому в рамках лабораторної не робилось.
 
+## Живий деплой
+
+Одна дистрибуція CloudFront обслуговує обидва імені. Бакет S3 приватний (доступ лише через OAC),
+CloudFront Function за заголовком `Host` додає до шляху префікс `fast/` або `slow/`
+і віддає `index.html` на маршрути без розширення. Інфраструктура в [`deploy/terraform`](deploy/terraform),
+збірка й завантаження обох версій у [`deploy/deploy.sh`](deploy/deploy.sh).
+Кешування: `assets/*` з хешем в імені `max-age=31536000, immutable`, `index.html` `no-cache`, решта година.
+
+Сценарій «завантаження» на живих адресах, ті самі умови, медіана з 3
+([`live-slow`](report/data/live-slow/runs.json), [`live-fast`](report/data/live-fast/runs.json)):
+
+| Метрика | slow.lab7.naukma.com | lab7.naukma.com |
+| --- | ---: | ---: |
+| LCP | 23 572 мс (`hero.png`) | 2776 мс (`hero-2400.webp`) |
+| CLS | 0.587 | 0 |
+| Обсяг завантаженого | 22 485 КБ, 41 запит | 103 КБ, 15 запитів |
+| Подія `load` | 24 628 мс | 4040 мс |
+
+LCP повільної версії на CloudFront утричі гірший, ніж локально (9572 мс). Локальний `vite preview`
+працює по HTTP/1.1: шість з'єднань, і hero стоїть у черзі першим. CloudFront віддає HTTP/2 і HTTP/3,
+тож усі 37 PNG мультиплексуються в одному з'єднанні й ділять 9 Мбіт/с порівну, і hero
+докачується разом з останніми фото. Швидка версія від протоколу майже не залежить: фото ліниві,
+а hero має `fetchpriority="high"`.
+
 ## Як відтворити
 
 ```bash
@@ -255,4 +283,11 @@ cd perf && npm install
 node measure.mjs --label my-run --runs 3 --trace   # цифри + трейси в report/
 node screenshot.mjs --label my-run --only favorite --tab bottom-up
 cd .. && ./node_modules/.bin/vite-node perf/micro.mjs
+
+# живі адреси
+node perf/measure.mjs --label live-fast --only load --url https://lab7.naukma.com/
+
+# деплой (профіль AWS personal)
+cd deploy/terraform && terraform init -backend-config=backend.hcl && terraform apply
+cd ../.. && ./deploy/deploy.sh
 ```
