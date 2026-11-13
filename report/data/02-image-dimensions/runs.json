@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "label": "02-image-dimensions",
+    "date": "2026-11-13T07:04:40.963Z",
+    "conditions": {
+      "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 2
+      },
+      "cpuSlowdown": 4,
+      "network": {
+        "name": "Fast 4G (custom)",
+        "downMbps": 9,
+        "upMbps": 1.5,
+        "rttMs": 60
+      }
+    },
+    "version": "Chrome/157.0.8103.39"
+  },
+  "runs": [
+    {
+      "load": {
+        "lcp": 2796,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6396484375,
+        "requests": 15,
+        "loadEvent": 4726.400000095367,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3150.2,
+        "loafCount": 5,
+        "longestFrame": 2373,
+        "forcedLayout": 1273.8,
+        "domNodes": 48815
+      }
+    },
+    {
+      "load": {
+        "lcp": 2812,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6396484375,
+        "requests": 15,
+        "loadEvent": 4685.100000023842,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 2973.5999999999995,
+        "loafCount": 5,
+        "longestFrame": 2247.7000000476837,
+        "forcedLayout": 1155.4,
+        "domNodes": 48815
+      }
+    },
+    {
+      "load": {
+        "lcp": 2660,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6396484375,
+        "requests": 15,
+        "loadEvent": 4614.299999952316,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3044.2999999999997,
+        "loafCount": 5,
+        "longestFrame": 2251.100000023842,
+        "forcedLayout": 1188,
+        "domNodes": 48815
+      }
+    }
+  ],
+  "summary": {
+    "load": {
+      "lcp": 2796,
+      "lcpElement": "IMG hero-2400.webp",
+      "cls": 0,
+      "transferKB": 102.6396484375,
+      "requests": 15,
+      "loadEvent": 4685.100000023842,
+      "inp": 0,
+      "typicalInteraction": 0,
+      "interactions": 0,
+      "loafBlocking": 3044.2999999999997,
+      "loafCount": 5,
+      "longestFrame": 2251.100000023842,
+      "forcedLayout": 1188,
+      "domNodes": 48815
+    }
+  }
+}

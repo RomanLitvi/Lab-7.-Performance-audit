@@ -19,6 +19,7 @@ const { values: args } = parseArgs({
 const PORT = 9223;
 const LOAD_BUTTON = { x: 108, y: 39 };
 const SHORTCUTS_CLOSE = { x: 1572 };
+const OVERVIEW = { left: 150, right: 1563, y: 72 };
 const TABS = { 'bottom-up': 'Bottom-up', 'call-tree': 'Call tree' };
 
 // DevTools renders into nested shadow roots, which CSS and text selectors do not cross.
@@ -73,6 +74,13 @@ for (const scenario of args.only.split(',')) {
   };
   const dialog = await rectOf('Keyboard shortcuts for flame chart');
   if (dialog) await page.mouse.click(SHORTCUTS_CLOSE.x, dialog.y + dialog.height / 2);
+  // DevTools zooms to the busy part of a trace; select the whole overview so that
+  // before/after traces of equal length are shown at the same scale.
+  await page.mouse.move(OVERVIEW.right, OVERVIEW.y);
+  await page.mouse.down();
+  await page.mouse.move(OVERVIEW.left, OVERVIEW.y, { steps: 20 });
+  await page.mouse.up();
+  await sleep(2000);
   if (args.insight) await clickText(args.insight);
   if (args.tab) await clickText(TABS[args.tab]);
   const suffix = (args.tab ? `-${args.tab}` : '') + (args.insight ? `-${args.insight.replaceAll(' ', '-').toLowerCase()}` : '');

@@ -1,0 +1,240 @@
+{
+  "meta": {
+    "label": "03-bio-clamp-interactions",
+    "date": "2026-11-13T08:45:38.891Z",
+    "conditions": {
+      "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 2
+      },
+      "cpuSlowdown": 4,
+      "network": {
+        "name": "Fast 4G (custom)",
+        "downMbps": 9,
+        "upMbps": 1.5,
+        "rttMs": 60
+      }
+    },
+    "version": "Chrome/157.0.8103.39"
+  },
+  "runs": [
+    {
+      "load": {
+        "lcp": 3004,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6279296875,
+        "requests": 15,
+        "loadEvent": 4933.299999952316,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3359.2,
+        "loafCount": 5,
+        "longestFrame": 2582.9000000953674,
+        "forcedLayout": 1325.8,
+        "domNodes": 48815
+      },
+      "search": {
+        "inp": 912,
+        "typicalInteraction": 168,
+        "interactions": 11,
+        "loafBlocking": 2839.2,
+        "loafCount": 12,
+        "longestFrame": 890,
+        "forcedLayout": 85.6
+      },
+      "favorite": {
+        "inp": 896,
+        "typicalInteraction": 880,
+        "interactions": 3,
+        "loafBlocking": 2414.4,
+        "loafCount": 5,
+        "longestFrame": 864.3999999761581,
+        "forcedLayout": 13.8
+      },
+      "details": {
+        "inp": 984,
+        "typicalInteraction": 904,
+        "interactions": 2,
+        "loafBlocking": 1616.9,
+        "loafCount": 3,
+        "longestFrame": 940.8999999761581,
+        "forcedLayout": 42.5
+      },
+      "sort": {
+        "inp": 112,
+        "typicalInteraction": 80,
+        "interactions": 2,
+        "loafBlocking": 33.3,
+        "loafCount": 2,
+        "longestFrame": 75.39999997615814,
+        "forcedLayout": 0
+      }
+    },
+    {
+      "load": {
+        "lcp": 2884,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6279296875,
+        "requests": 15,
+        "loadEvent": 4762.800000071526,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3227.9,
+        "loafCount": 4,
+        "longestFrame": 2499.7000000476837,
+        "forcedLayout": 1175.3,
+        "domNodes": 48815
+      },
+      "search": {
+        "inp": 896,
+        "typicalInteraction": 144,
+        "interactions": 11,
+        "loafBlocking": 2775,
+        "loafCount": 12,
+        "longestFrame": 864.1999999284744,
+        "forcedLayout": 79.5
+      },
+      "favorite": {
+        "inp": 856,
+        "typicalInteraction": 824,
+        "interactions": 3,
+        "loafBlocking": 2269,
+        "loafCount": 5,
+        "longestFrame": 824.0999999046326,
+        "forcedLayout": 12.6
+      },
+      "details": {
+        "inp": 1032,
+        "typicalInteraction": 920,
+        "interactions": 2,
+        "loafBlocking": 1567.2,
+        "loafCount": 3,
+        "longestFrame": 893.7000000476837,
+        "forcedLayout": 42.7
+      },
+      "sort": {
+        "inp": 104,
+        "typicalInteraction": 64,
+        "interactions": 2,
+        "loafBlocking": 31.3,
+        "loafCount": 2,
+        "longestFrame": 82.29999995231628,
+        "forcedLayout": 0
+      }
+    },
+    {
+      "load": {
+        "lcp": 2820,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.6279296875,
+        "requests": 15,
+        "loadEvent": 4710.799999952316,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 3180.3,
+        "loafCount": 4,
+        "longestFrame": 2440.1999999284744,
+        "forcedLayout": 1175.2,
+        "domNodes": 48815
+      },
+      "search": {
+        "inp": 864,
+        "typicalInteraction": 144,
+        "interactions": 11,
+        "loafBlocking": 2681.4,
+        "loafCount": 11,
+        "longestFrame": 843,
+        "forcedLayout": 78.7
+      },
+      "favorite": {
+        "inp": 864,
+        "typicalInteraction": 840,
+        "interactions": 3,
+        "loafBlocking": 2302.2,
+        "loafCount": 5,
+        "longestFrame": 832.6000000238419,
+        "forcedLayout": 14.1
+      },
+      "details": {
+        "inp": 960,
+        "typicalInteraction": 892,
+        "interactions": 2,
+        "loafBlocking": 1597.6,
+        "loafCount": 3,
+        "longestFrame": 918.1000000238419,
+        "forcedLayout": 45.3
+      },
+      "sort": {
+        "inp": 112,
+        "typicalInteraction": 68,
+        "interactions": 2,
+        "loafBlocking": 31.900000000000002,
+        "loafCount": 2,
+        "longestFrame": 61.89999997615814,
+        "forcedLayout": 0
+      }
+    }
+  ],
+  "summary": {
+    "load": {
+      "lcp": 2884,
+      "lcpElement": "IMG hero-2400.webp",
+      "cls": 0,
+      "transferKB": 102.6279296875,
+      "requests": 15,
+      "loadEvent": 4762.800000071526,
+      "inp": 0,
+      "typicalInteraction": 0,
+      "interactions": 0,
+      "loafBlocking": 3227.9,
+      "loafCount": 4,
+      "longestFrame": 2499.7000000476837,
+      "forcedLayout": 1175.3,
+      "domNodes": 48815
+    },
+    "search": {
+      "inp": 896,
+      "typicalInteraction": 144,
+      "interactions": 11,
+      "loafBlocking": 2775,
+      "loafCount": 12,
+      "longestFrame": 864.1999999284744,
+      "forcedLayout": 79.5
+    },
+    "favorite": {
+      "inp": 864,
+      "typicalInteraction": 840,
+      "interactions": 3,
+      "loafBlocking": 2302.2,
+      "loafCount": 5,
+      "longestFrame": 832.6000000238419,
+      "forcedLayout": 13.8
+    },
+    "details": {
+      "inp": 984,
+      "typicalInteraction": 904,
+      "interactions": 2,
+      "loafBlocking": 1597.6,
+      "loafCount": 3,
+      "longestFrame": 918.1000000238419,
+      "forcedLayout": 42.7
+    },
+    "sort": {
+      "inp": 112,
+      "typicalInteraction": 68,
+      "interactions": 2,
+      "loafBlocking": 31.900000000000002,
+      "loafCount": 2,
+      "longestFrame": 75.39999997615814,
+      "forcedLayout": 0
+    }
+  }
+}

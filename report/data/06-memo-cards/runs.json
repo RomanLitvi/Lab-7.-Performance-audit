@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "label": "06-memo-cards",
+    "date": "2026-11-13T08:39:08.713Z",
+    "conditions": {
+      "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 2
+      },
+      "cpuSlowdown": 4,
+      "network": {
+        "name": "Fast 4G (custom)",
+        "downMbps": 9,
+        "upMbps": 1.5,
+        "rttMs": 60
+      }
+    },
+    "version": "Chrome/157.0.8103.39"
+  },
+  "runs": [
+    {
+      "load": {
+        "lcp": 2280,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.7080078125,
+        "requests": 15,
+        "loadEvent": 3602.8000000715256,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 1919.1999999999998,
+        "loafCount": 6,
+        "longestFrame": 1852.1000000238419,
+        "forcedLayout": 1097.2,
+        "domNodes": 48815
+      },
+      "search": {
+        "inp": 328,
+        "typicalInteraction": 88,
+        "interactions": 11,
+        "loafBlocking": 578.6999999999999,
+        "loafCount": 8,
+        "longestFrame": 226.39999997615814,
+        "forcedLayout": 79.9
+      },
+      "favorite": {
+        "inp": 224,
+        "typicalInteraction": 208,
+        "interactions": 3,
+        "loafBlocking": 304.4,
+        "loafCount": 5,
+        "longestFrame": 184.5,
+        "forcedLayout": 0
+      },
+      "details": {
+        "inp": 320,
+        "typicalInteraction": 228,
+        "interactions": 2,
+        "loafBlocking": 311.4,
+        "loafCount": 4,
+        "longestFrame": 282.60000002384186,
+        "forcedLayout": 0
+      },
+      "sort": {
+        "inp": 96,
+        "typicalInteraction": 60,
+        "interactions": 2,
+        "loafBlocking": 21.9,
+        "loafCount": 2,
+        "longestFrame": 76.80000007152557,
+        "forcedLayout": 0
+      },
+      "scroll": {
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 599.6999999999999,
+        "loafCount": 37,
+        "longestFrame": 100.09999990463257,
+        "forcedLayout": 0
+      }
+    },
+    {
+      "load": {
+        "lcp": 2516,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.7080078125,
+        "requests": 15,
+        "loadEvent": 3742.4000000953674,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 2123.1000000000004,
+        "loafCount": 4,
+        "longestFrame": 2090.5,
+        "forcedLayout": 1283.5,
+        "domNodes": 48815
+      },
+      "search": {
+        "inp": 344,
+        "typicalInteraction": 104,
+        "interactions": 11,
+        "loafBlocking": 651.0000000000001,
+        "loafCount": 9,
+        "longestFrame": 229.60000002384186,
+        "forcedLayout": 80.1
+      },
+      "favorite": {
+        "inp": 192,
+        "typicalInteraction": 168,
+        "interactions": 3,
+        "loafBlocking": 276.5,
+        "loafCount": 5,
+        "longestFrame": 164.69999992847443,
+        "forcedLayout": 0
+      },
+      "details": {
+        "inp": 280,
+        "typicalInteraction": 204,
+        "interactions": 2,
+        "loafBlocking": 255.60000000000002,
+        "loafCount": 4,
+        "longestFrame": 246.19999992847443,
+        "forcedLayout": 0
+      },
+      "sort": {
+        "inp": 96,
+        "typicalInteraction": 68,
+        "interactions": 2,
+        "loafBlocking": 19,
+        "loafCount": 2,
+        "longestFrame": 65.10000002384186,
+        "forcedLayout": 0
+      },
+      "scroll": {
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 517.3999999999997,
+        "loafCount": 38,
+        "longestFrame": 105,
+        "forcedLayout": 0
+      }
+    },
+    {
+      "load": {
+        "lcp": 2288,
+        "lcpElement": "IMG hero-2400.webp",
+        "cls": 0,
+        "transferKB": 102.7080078125,
+        "requests": 15,
+        "loadEvent": 3524.6999999284744,
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 1927.9,
+        "loafCount": 5,
+        "longestFrame": 1888,
+        "forcedLayout": 1118.2,
+        "domNodes": 48815
+      },
+      "search": {
+        "inp": 248,
+        "typicalInteraction": 80,
+        "interactions": 11,
+        "loafBlocking": 611.7,
+        "loafCount": 7,
+        "longestFrame": 225.39999997615814,
+        "forcedLayout": 80
+      },
+      "favorite": {
+        "inp": 184,
+        "typicalInteraction": 160,
+        "interactions": 3,
+        "loafBlocking": 288.6,
+        "loafCount": 5,
+        "longestFrame": 160,
+        "forcedLayout": 0
+      },
+      "details": {
+        "inp": 288,
+        "typicalInteraction": 204,
+        "interactions": 2,
+        "loafBlocking": 278.2,
+        "loafCount": 4,
+        "longestFrame": 256.5,
+        "forcedLayout": 0
+      },
+      "sort": {
+        "inp": 104,
+        "typicalInteraction": 64,
+        "interactions": 2,
+        "loafBlocking": 15.100000000000001,
+        "loafCount": 2,
+        "longestFrame": 61.5,
+        "forcedLayout": 0
+      },
+      "scroll": {
+        "inp": 0,
+        "typicalInteraction": 0,
+        "interactions": 0,
+        "loafBlocking": 476.70000000000016,
+        "loafCount": 37,
+        "longestFrame": 87.59999990463257,
+        "forcedLayout": 0
+      }
+    }
+  ],
+  "summary": {
+    "load": {
+      "lcp": 2288,
+      "lcpElement": "IMG hero-2400.webp",
+      "cls": 0,
+      "transferKB": 102.7080078125,
+      "requests": 15,
+      "loadEvent": 3602.8000000715256,
+      "inp": 0,
+      "typicalInteraction": 0,
+      "interactions": 0,
+      "loafBlocking": 1927.9,
+      "loafCount": 5,
+      "longestFrame": 1888,
+      "forcedLayout": 1118.2,
+      "domNodes": 48815
+    },
+    "search": {
+      "inp": 328,
+      "typicalInteraction": 88,
+      "interactions": 11,
+      "loafBlocking": 611.7,
+      "loafCount": 8,
+      "longestFrame": 226.39999997615814,
+      "forcedLayout": 80
+    },
+    "favorite": {
+      "inp": 192,
+      "typicalInteraction": 168,
+      "interactions": 3,
+      "loafBlocking": 288.6,
+      "loafCount": 5,
+      "longestFrame": 164.69999992847443,
+      "forcedLayout": 0
+    },
+    "details": {
+      "inp": 288,
+      "typicalInteraction": 204,
+      "interactions": 2,
+      "loafBlocking": 278.2,
+      "loafCount": 4,
+      "longestFrame": 256.5,
+      "forcedLayout": 0
+    },
+    "sort": {
+      "inp": 96,
+      "typicalInteraction": 64,
+      "interactions": 2,
+      "loafBlocking": 19,
+      "loafCount": 2,
+      "longestFrame": 65.10000002384186,
+      "forcedLayout": 0
+    },
+    "scroll": {
+      "inp": 0,
+      "typicalInteraction": 0,
+      "interactions": 0,
+      "loafBlocking": 517.3999999999997,
+      "loafCount": 37,
+      "longestFrame": 100.09999990463257,
+      "forcedLayout": 0
+    }
+  }
+}
