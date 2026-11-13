@@ -1,9 +1,11 @@
+const priceFormat = new Intl.NumberFormat('uk-UA', {
+  style: 'currency',
+  currency: 'UAH',
+  maximumFractionDigits: 0,
+});
+
 export function formatPrice(value) {
-  return new Intl.NumberFormat('uk-UA', {
-    style: 'currency',
-    currency: 'UAH',
-    maximumFractionDigits: 0,
-  }).format(value);
+  return priceFormat.format(value);
 }
 
 export function pluralize(count, one, few, many) {
