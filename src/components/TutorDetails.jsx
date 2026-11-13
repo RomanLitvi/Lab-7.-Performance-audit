@@ -23,7 +23,7 @@ export default function TutorDetails({ tutor, isFavorite, onToggleFavorite, onCl
           ×
         </button>
         <div className="drawer__head">
-          <img className="drawer__photo" src={tutor.photo} alt={tutor.name} />
+          <img className="drawer__photo" src={tutor.photo} alt={tutor.name} width="112" height="112" />
           <div>
             <h2>{tutor.name}</h2>
             <p className="drawer__meta">

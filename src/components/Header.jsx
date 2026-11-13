@@ -21,6 +21,8 @@ export default function Header({ favoritesCount, total }) {
           src="/images/hero-2400.webp"
           srcSet="/images/hero-1200.webp 1200w, /images/hero-2400.webp 2400w"
           sizes="100vw"
+          width="2400"
+          height="900"
           fetchpriority="high"
           alt="Учні на занятті з репетитором"
         />

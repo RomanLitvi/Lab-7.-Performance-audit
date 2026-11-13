@@ -13,6 +13,8 @@ export default function TutorCard({ tutor, isFavorite, isSelected, onSelect, onT
           className="tutor-card__photo"
           src={tutor.photo}
           alt={tutor.name}
+          width="512"
+          height="512"
           loading="lazy"
           decoding="async"
         />
