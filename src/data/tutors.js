@@ -93,7 +93,7 @@ export function generateTutors(count = 2000, seed = 20251) {
       experienceYears: years,
       verified: rnd.chance(0.35),
       bio: makeBio(rnd, years),
-      photo: `/photos/tutor-${pad(rnd.int(1, PHOTO_COUNT))}.png`,
+      photo: `/photos/tutor-${pad(rnd.int(1, PHOTO_COUNT))}.webp`,
       reviews: makeReviews(rnd, quality),
       joined: isoDate(BASE_DATE - rnd.int(30, 3000) * DAY),
     });
