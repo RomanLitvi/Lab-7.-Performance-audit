@@ -1,0 +1,10 @@
+{
+  "name": "perf-harness",
+  "scripts": {},
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "lighthouse": "^13.6.0",
+    "puppeteer-core": "^25.17.0"
+  }
+}
