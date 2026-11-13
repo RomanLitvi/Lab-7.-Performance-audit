@@ -182,10 +182,31 @@ async function runOnce(browser, { trace }) {
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: CONDITIONS.cpuSlowdown });
   let bytes = 0;
   let requests = 0;
+  // page.waitForNetworkIdle treats a request as done once its headers arrive; over HTTP/2-3
+  // all image headers arrive together while the bodies are still downloading.
+  const inflight = new Set();
+  let lastNetworkEvent = Date.now();
+  const settle = (e) => {
+    inflight.delete(e.requestId);
+    lastNetworkEvent = Date.now();
+  };
+  cdp.on('Network.requestWillBeSent', (e) => {
+    inflight.add(e.requestId);
+    lastNetworkEvent = Date.now();
+  });
+  cdp.on('Network.loadingFailed', settle);
   cdp.on('Network.loadingFinished', (e) => {
     bytes += e.encodedDataLength;
     requests += 1;
+    settle(e);
   });
+  const waitForNetworkQuiet = async (idleMs = 1000, timeoutMs = 300_000) => {
+    const deadline = Date.now() + timeoutMs;
+    while (inflight.size > 0 || Date.now() - lastNetworkEvent < idleMs) {
+      if (Date.now() > deadline) throw new Error(`network still busy: ${inflight.size} requests`);
+      await sleep(100);
+    }
+  };
   await page.evaluateOnNewDocument(observeInPage);
 
   const result = {};
@@ -206,7 +227,7 @@ async function runOnce(browser, { trace }) {
   if (traceLoad) await startTrace('load', { screenshots: true });
   await page.goto(args.url, { waitUntil: 'load', timeout: 300_000 });
   await page.waitForSelector('.tutor-card', { timeout: 300_000 });
-  await page.waitForNetworkIdle({ idleTime: 1000, timeout: 300_000 });
+  await waitForNetworkQuiet();
   const loadEnd = await now(page);
   await sleep(2000);
   if (traceLoad) await stopTrace('load');
