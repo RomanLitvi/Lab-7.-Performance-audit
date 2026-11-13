@@ -4,6 +4,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 import puppeteer from 'puppeteer-core';
+import { CONDITIONS } from './conditions.mjs';
 
 const { values: args } = parseArgs({
   options: {
@@ -15,14 +16,25 @@ const { values: args } = parseArgs({
   },
 });
 
-export const CONDITIONS = {
-  chrome: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-  viewport: { width: 1440, height: 900, deviceScaleFactor: 2 },
-  cpuSlowdown: 4,
-  network: { name: 'Fast 4G (custom)', downMbps: 9, upMbps: 1.5, rttMs: 60 },
-};
-
 const QUERY = 'математика';
+// Every trace of a scenario lasts the same time, so before/after screenshots share one scale.
+// The values match the length of the baseline traces.
+const TRACE_MS = { load: 30_000, search: 16_700, favorite: 6_400, details: 8_100, sort: 5_500, scroll: 22_700 };
+const TRACE_CATEGORIES = [
+  '-*',
+  'devtools.timeline',
+  'v8.execute',
+  'disabled-by-default-devtools.timeline',
+  'disabled-by-default-devtools.timeline.frame',
+  'disabled-by-default-devtools.timeline.stack',
+  'disabled-by-default-devtools.v8-source-rundown',
+  'disabled-by-default-devtools.v8-source-rundown-sources',
+  'disabled-by-default-v8.cpu_profiler',
+  'toplevel',
+  'loading',
+  'latencyInfo',
+  'blink.user_timing',
+];
 const SCENARIOS = ['load', 'search', 'favorite', 'details', 'sort', 'scroll'];
 const selected = args.only ? args.only.split(',') : SCENARIOS;
 const outDir = path.resolve(import.meta.dirname, '../report/data', args.label);
@@ -178,16 +190,26 @@ async function runOnce(browser, { trace }) {
 
   const result = {};
   const traceTo = (name) => trace && path.join(traceDir, `${name}.json`);
+  let traceStarted = 0;
+  const startTrace = async (name, options = {}) => {
+    if (!traceTo(name)) return;
+    await page.tracing.start({ path: traceTo(name), categories: TRACE_CATEGORIES, ...options });
+    traceStarted = Date.now();
+  };
+  const stopTrace = async (name) => {
+    if (!traceTo(name)) return;
+    await sleep(Math.max(0, TRACE_MS[name] - (Date.now() - traceStarted)));
+    await page.tracing.stop();
+  };
 
-  if (traceTo('load') && selected.includes('load')) {
-    await page.tracing.start({ path: traceTo('load'), screenshots: true });
-  }
+  const traceLoad = selected.includes('load');
+  if (traceLoad) await startTrace('load', { screenshots: true });
   await page.goto(args.url, { waitUntil: 'load', timeout: 300_000 });
   await page.waitForSelector('.tutor-card', { timeout: 300_000 });
   await page.waitForNetworkIdle({ idleTime: 1000, timeout: 300_000 });
   const loadEnd = await now(page);
   await sleep(2000);
-  if (traceTo('load') && selected.includes('load')) await page.tracing.stop();
+  if (traceLoad) await stopTrace('load');
   const perf = await page.evaluate(() => window.__perf);
   result.load = {
     lcp: perf.lcp,
@@ -201,11 +223,11 @@ async function runOnce(browser, { trace }) {
   };
 
   for (const name of selected.filter((s) => s !== 'load')) {
-    if (traceTo(name)) await page.tracing.start({ path: traceTo(name) });
+    await startTrace(name);
     const from = await now(page);
     await actions[name](page);
     const to = await now(page);
-    if (traceTo(name)) await page.tracing.stop();
+    await stopTrace(name);
     result[name] = windowStats(await page.evaluate(() => window.__perf), from, to);
     await reset[name]?.(page);
   }
@@ -233,6 +255,7 @@ if (args.trace) {
 }
 await browser.close();
 
+if (!runs.length) process.exit(0);
 const summary = {};
 for (const scenario of Object.keys(runs[0])) {
   summary[scenario] = {};
