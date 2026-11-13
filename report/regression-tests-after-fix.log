@@ -1,0 +1,20 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> tutor-catalog@0.3.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/litvinchuk.roman/NaUKMA/Веб розробка/Lab07/lab7
+
+ ✓ src/__tests__/SearchBar.test.jsx (1 test) 65ms
+ ✓ src/__tests__/catalog.sort.test.js (2 tests) 96ms
+(node:87539) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ src/__tests__/TutorList.rerender.test.jsx (1 test) 1099ms
+   ✓ список репетиторів > після додавання в обрані перерендерює лише змінену картку  1098ms
+
+ Test Files  3 passed (3)
+      Tests  4 passed (4)
+   Start at  10:43:01
+   Duration  2.46s (transform 131ms, setup 306ms, collect 500ms, tests 1.26s, environment 1.72s, prepare 204ms)
+

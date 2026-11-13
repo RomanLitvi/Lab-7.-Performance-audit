@@ -1,6 +1,11 @@
 node_modules
 dist
 *.log
+!report/*.log
 .DS_Store
 .vite
 coverage
+deploy/terraform/.terraform/
+deploy/terraform/tfplan
+*.tfstate
+*.tfstate.*

@@ -1,0 +1,45 @@
+npm warn Unknown env config "devdir". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+ RUN  v3.2.7 /private/tmp/lab7-initial
+
+ ✓ src/__tests__/SearchBar.test.jsx > SearchBar > показує кількість знайдених і передає введений текст 28ms
+ × src/__tests__/catalog.sort.test.js > сортування «Рекомендовані» > рахує рейтинг кожного репетитора не більше одного разу 36ms
+   → expected 7628 to be less than or equal to 500
+ ✓ src/__tests__/catalog.sort.test.js > сортування «Рекомендовані» > зберігає порядок від найвищого рейтингу до найнижчого 64ms
+(node:84523) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ × src/__tests__/TutorList.rerender.test.jsx > список репетиторів > після додавання в обрані перерендерює лише змінену картку 961ms
+   → expected 200 to be less than or equal to 1
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/TutorList.rerender.test.jsx > список репетиторів > після додавання в обрані перерендерює лише змінену картку
+AssertionError: expected 200 to be less than or equal to 1
+ ❯ src/__tests__/TutorList.rerender.test.jsx:26:45
+     24| 
+     25|     expect(first.getAttribute('aria-pressed')).toBe('true');
+     26|     expect(averageRating.mock.calls.length).toBeLessThanOrEqual(1);
+       |                                             ^
+     27|   });
+     28| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/__tests__/catalog.sort.test.js > сортування «Рекомендовані» > рахує рейтинг кожного репетитора не більше одного разу
+AssertionError: expected 7628 to be less than or equal to 500
+ ❯ src/__tests__/catalog.sort.test.js:22:42
+     20|     getVisibleTutors(tutors, { query: '', filters: DEFAULT_FILTERS, so…
+     21| 
+     22|     expect(tutorScore.mock.calls.length).toBeLessThanOrEqual(tutors.le…
+       |                                          ^
+     23|   });
+     24| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  2 failed | 2 passed (4)
+   Start at  10:39:58
+   Duration  2.18s (transform 159ms, setup 319ms, collect 438ms, tests 1.09s, environment 1.01s, prepare 315ms)
+
